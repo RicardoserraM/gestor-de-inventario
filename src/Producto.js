@@ -1,4 +1,4 @@
-class Producto {
+export default class Producto {
   #producto;
   #precio;
   #stock;
@@ -21,13 +21,13 @@ class Producto {
   }
   //GETTER PARA LECTURA DE CADA CAMPO
   get getProducto() {
-    return `Producto: ${this.#producto}`;
+    return this.#producto;
   }
   get getPrecio() {
-    return `Precio: $${this.#precio}`;
+    return this.#precio;
   }
   get getStock() {
-    return `Stock de ${this.#producto}: ${this.#stock}ud disponibles`;
+    return this.#stock;
   }
 
   //SETTER DE VALIDACION DE CAMPOS EN CASO DE SUSTITUCION
@@ -74,25 +74,3 @@ class Producto {
     return new Producto(nombre, precio, stock);
   }
 }
-
-const nuevosProductos = [
-  { nombre: 'Samsung S23', precio: 100, stock: 50 },
-  { nombre: 'Apple Pencil', precio: 10, stock: 10 },
-  { nombre: 'Tv Phillips 30 Pulgadas', precio: 800, stock: 20 },
-  { nombre: 'Xiaomi Mouse', precio: 50, stock: 100 },
-];
-
-const listaProductos = nuevosProductos.map(p => Producto.desdeObjeto(p));
-
-console.log(listaProductos);
-
-// nuevoProducto.getDisponible;
-// nuevoProducto.aplicarDescuento(50);
-// nuevoProducto.getResumen;
-// nuevoProducto.setNuevoPrecio = 10;
-// nuevoProducto.setNuevoStock = 10;
-// nuevoProducto.getProducto;
-// nuevoProducto.getPrecio;
-// nuevoProducto.getStock;
-
-// feat: clase Producto con campos privados, getters y setters
